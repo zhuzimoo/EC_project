@@ -2,9 +2,9 @@
 ### Dependency and version control
 - Python
     - processing raw scRNA-seq data: Python==3.8
-        - packages: Scanpy (version 1.8.2), Anndata (version 0.9.2)
+        - packages: Scanpy (version 1.8.2), Anndata (version 0.9.2), Pandas (2.2.2)
     - downstream analysis: Python==3.10
-        - packages: Scipy (version 1.13.0), scikit-learn (version 1.4.2), statsmodels (version 0.14.2)
+        - packages: Scipy (version 1.13.0), Scikit-learn (version 1.4.2), Statsmodels (version 0.14.2), Pandas (version 2.2.2)
 - R==4.4
     - packages: topicmodels (version 0.2-16), tidytext (version 0.4.2), tidy (version 1.3.1), dplyr (version 1.1.4), pheatmap (version 1.0.12), ggplot2 (version 3.5.1)
 

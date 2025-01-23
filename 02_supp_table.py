@@ -6,6 +6,7 @@ import pandas as pd
 
 comb_table = pd.DataFrame()
 
+# load in raw scRNA-seq data
 results_folder = "./raw_used_tissues"
 directory = os.fsencode(results_folder)
 

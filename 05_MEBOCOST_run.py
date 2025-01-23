@@ -6,7 +6,7 @@ adata = sc.read_h5ad("./raw_10000/intestine_10000.h5ad")
 sc.pp.normalize_total(adata, target_sum=1e4)
 sc.pp.log1p(adata)
 
-
+# create mebocost object
 mebo_obj = mebocost.create_obj(
                         adata = adata,
                         group_col = ['ct'],
@@ -41,7 +41,10 @@ commu_res = mebo_obj.infer_commu(
                                 min_cell_number = 1
                             )
 
+# save mebocost inferred results
 mebocost.save_obj(obj = mebo_obj, path = f'./comb_result/mebocost/pk_file/{tissue_name}_commu.pk')
 commu_res = mebo_obj.commu_res.copy()
 commu_res = commu_res[commu_res['permutation_test_fdr']<=0.05]
+
+# export the results
 commu_res.to_csv(f'./comb_result/mebocost/csv_file/{tissue_name}_communication_result.tsv', sep = '\t', index = None)

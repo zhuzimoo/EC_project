@@ -7,10 +7,10 @@ library(pheatmap)
 
 k = 15 # a num indicating the number of topics
 output = "./LDA_plot/" # the folder for saving result
-commu_file = "./data/lda/liana/liana_LDA_matrix_num_norm_receiver.csv" # row = m_s pairs, columns = tissue, samples
+commu_file = "./data/lda/liana/liana_LDA_matrix_num_norm_receiver.csv" # row = communication pairs, columns = tissue, samples
 
 k = as.integer(k)
-# m_s topic matrix
+# communication topic matrix
 commu_summary = read.csv(commu_file, row.names = 1)
 commu_summary = t(commu_summary) # rows are tissue, cols are m_s pairs
 
@@ -25,14 +25,7 @@ top_terms <- ap_topics %>%
   ungroup() %>%
   arrange(topic, -beta)
 
-q <- quantile(top_terms$beta, probs = c(0.6))[[1]]
-
-plot(density(top_terms$beta), main="Beta Distribution on Filtered top 15 beta value in 12 topics",
-     xlab = "beta")
-abline(v=0.05905131, col="red", lty=c(1,2))
-legend("topright", legend = "beta=0.059 (0.5 quantile)", pch = "|", col = "red")
-# ggsave(paste(output, "/12_topics_new/distribution", ".png", sep=""))
-
+# save the result matrices
 write.table(ap_topics, file = "./data/lda/liana/liana_num_norm_receiver_LDA_topics_15t.csv", sep = ",", row.names = FALSE)
 write.table(ap_documents, file = "./data/lda/liana/liana_num_norm_receiver_LDA_documents_15t.csv", sep = ",", row.names = FALSE)
 

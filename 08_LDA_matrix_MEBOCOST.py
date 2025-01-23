@@ -2,6 +2,7 @@ import os
 import pandas as pd
 
 mydata = dict()
+# load results from MEBOCOST inferred CCC
 results_folder = "./data/mebocost/csv_file"
 
 for filename in sorted(os.listdir(results_folder)):

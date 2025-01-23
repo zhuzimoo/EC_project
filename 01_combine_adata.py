@@ -4,6 +4,7 @@ import os
 import scanpy.external as sce
 
 index_list = [i for i in range(0, 17)]
+# load in the first data set
 ori = sc.read_h5ad("./raw_used_tissues/disco_adipose_v01.h5ad")
 adata = sc.AnnData(X=ori.X, obs=ori.obs, var=ori.var)
 adata = adata[(adata.obs.ct == 'Arterial EC') |(adata.obs.ct == 'Venous EC') | (adata.obs.ct == 'Capillary EC') | (adata.obs.ct == 'Lymphatic EC')]
@@ -16,6 +17,7 @@ else:
     adata.obs["project_comb"] = adata.obs["projectId"]
 print(adata.obs_keys())
 
+# load in the rest data and combine
 results_folder = "./raw_used_tissues"
 j = 1
 directory = os.fsencode(results_folder)

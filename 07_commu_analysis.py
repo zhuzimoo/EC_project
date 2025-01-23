@@ -6,7 +6,7 @@ import seaborn as sns
 from scipy.stats import pearsonr
 from scipy import stats
 
-# import MEBOCOST results
+# import MEBOCOST inferred metabolite-mediated CCC results
 mydata_mebocost = dict()
 results_folder = "./data/mebocost/csv_file"
 
@@ -25,7 +25,7 @@ for key, value in mydata_mebocost.items():
     num_commu = value.shape[0]
     new = new._append(pd.Series({'tissue': tissue, 'num': num_commu, 'property': 'mebocost'}), ignore_index=True)
 
-# import LIANA results
+# import LIANA inferred protein-mediated CCC results
 mydata_liana = dict()
 results_folder = "./data/liana"
 for filename in sorted(os.listdir(results_folder)):

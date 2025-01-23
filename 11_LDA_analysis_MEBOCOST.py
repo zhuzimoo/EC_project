@@ -5,6 +5,7 @@ import matplotlib.pylab as plt
 import matplotlib.cm as cm
 import matplotlib.colors as mcolors
 
+# load results from LDA
 df = pd.read_csv("./data/lda/mebocost/mebocost_num_norm_receiver_LDA_topics_15t.csv")
 
 important_ms_df = pd.DataFrame()

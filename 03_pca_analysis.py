@@ -1,5 +1,5 @@
 import pandas as pd
-from scipy.cluster.hierarchy import dendrogram, linkage, fcluster
+from scipy.cluster.hierarchy import dendrogram, linkage
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.metrics.pairwise import pairwise_distances

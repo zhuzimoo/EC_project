@@ -3,6 +3,7 @@ import pandas as pd
 from statsmodels.stats.multitest import fdrcorrection
 
 mydata = dict()
+# load results from LIANA inferred CCC
 results_folder = "./data/liana"
 
 for filename in sorted(os.listdir(results_folder)):

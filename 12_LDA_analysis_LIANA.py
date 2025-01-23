@@ -5,6 +5,7 @@ import matplotlib.pylab as plt
 from statsmodels.stats.multitest import fdrcorrection
 from itertools import product
 
+# load results from LDA
 df = pd.read_csv("./data/lda/liana/liana_num_norm_receiver_LDA_topics_15t.csv")
 
 important_lr_df = pd.DataFrame()

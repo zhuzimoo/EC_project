@@ -19,6 +19,6 @@ else:
    adata = adata[(adata.obs.sampleType == "Normal") | (adata.obs.sampleType == "normal")| (adata.obs.sampleType == "Adjacent normal") | (adata.obs.sampleType == "adjacent normal")]
 
 adata.obs["tissue_comb"] = tissue_name
-sc.pp.subsample(adata, n_obs=10000, random_state=123)
+sc.pp.subsample(adata, n_obs=10000, random_state=123) # downsample to 10000
 adata.write_h5ad(export_file)
 
